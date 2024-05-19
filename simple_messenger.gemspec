@@ -1,3 +1,5 @@
+RAILS_VERSIONS = ['>= 4.2.0'].freeze
+
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'simple_messenger/version'
@@ -17,11 +19,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activerecord'
+  spec.add_dependency 'activerecord', RAILS_VERSIONS
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
-  # spec.add_development_dependency "sqlite3"
   spec.add_development_dependency 'shoulda-matchers'
+  spec.add_development_dependency 'sqlite3'
 end
